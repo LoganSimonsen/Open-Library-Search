@@ -4,8 +4,9 @@ import logo from './logo.svg';
 import './App.css';
 import Data from '../src/components/Data';
 import Form from '../src/components/Form';
-import Favs from '../src/components/Favs';
 import Post from '../src/components/Post';
+import Delete from '../src/components/Delete';
+import Header from '../src/components/Header';
 
 let fieldVal = '';
 class App extends Component {
@@ -47,13 +48,10 @@ axios.get('http://localhost:3001/api/test1').then(response => {
     const { handleClick, responseArr, booksTitleList, $addToFavs, booksData, booksData1, booksData2, booksData3, booksData4, booksData5, booksTitle, booksTitle1, booksTitle2, booksTitle3,  booksTitle4,  booksTitle5 } = this.state;
     return (
       <div className="App">
-        <header className="App-header">
-        <img src='https://openlibrary.org/static/images/openlibrary-logo.png'></img>
-          <h1 className="App-title"> </h1>
-        </header>
+      <Header />
         <div id='resultsBox'>
             <ul><h2>Get Results (filtered)</h2>
-            <li><b>Title:</b> {booksTitle} <button onClick={this.handleClick} >Add\></button></li>
+            <li><b>Title:</b> {booksTitle} </li>
                 <ul>
                     <li className='author'>Author: { booksData } </li>
                 </ul>
@@ -81,8 +79,10 @@ axios.get('http://localhost:3001/api/test1').then(response => {
             </ul>
             
             </div>
+            
         <Post />
         <Form />
+        <Delete />
       </div>
     );
   }

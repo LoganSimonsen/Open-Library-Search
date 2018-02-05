@@ -1,7 +1,9 @@
 boby {
   color:black;
   font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-  display: inline-block;
+  display: inline-flex -webkit-inline-flex;
+  text-align: center;
+  
 }
 
 .App {
@@ -34,12 +36,11 @@ img {
 #resultsBox {
   margin: 5px;
   margin-top: 15px;
-  
   right: 5px;
   top: 5px;
   background: seashell;
   text-align: left;
-  width: 45vw;
+  width: 42vw;
   padding: 10px;
   border: solid;
   min-width: 300px;
@@ -58,7 +59,7 @@ h2 {
   text-align: left;
 }
 li {
-  padding: 10px;
+  padding: 2px;
 }
 .author {
   padding: 2px;
@@ -70,13 +71,13 @@ input {
   margin: 2px;
 }
 #newSearch {
-  margin: 5px;
+  margin: 2px;
   display: flex;
   background: seashell;
   text-align: left;
   flex-direction: column;
   width: 45vw;
-  padding: 10px;
+  padding: 4px;
   border: solid;
   min-width: 300px;
   min-height: 400px;

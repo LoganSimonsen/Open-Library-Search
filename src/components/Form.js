@@ -1,7 +1,5 @@
 import React from 'react';
 import axios from 'axios';
-import '../App.css';
-import Favs from './Favs';
 
 class Form extends React.Component {
     constructor(props) {
@@ -21,7 +19,6 @@ class Form extends React.Component {
     handleSubmit(event, res, req, nexts){
       event.preventDefault();
         axios.get('http://openlibrary.org/search.json?title=' + this.state.value).then(response => {
-          console.log(response.data.docs[0]['title']);
           this.setState({ booksData: response.data.docs[0]['author_name']});
           this.setState({ booksData1: response.data.docs[1]['author_name']});
           this.setState({ booksData2: response.data.docs[2]['author_name']});
@@ -46,7 +43,6 @@ class Form extends React.Component {
     render() {
         const { value, output } = this.state;
         const { handleClick, responseArr, booksTitleList, $addToFavs, booksData, booksData1, booksData2, booksData3, booksData4, booksData5, booksTitle, booksTitle1, booksTitle2, booksTitle3,  booksTitle4,  booksTitle5 } = this.state;
-        <Favs booksTitle={ booksTitle} />
       return (
         <form onSubmit={this.handleSubmit}>
           <label>
@@ -55,7 +51,7 @@ class Form extends React.Component {
           </label>
           <input type="submit" value="Submit" />
 
-          <div id='newSearch'> <h2>Custom Search</h2> <li><b>Title:</b> {booksTitle} </li>
+          <div id='resultsBox'> <h2>Custom Search</h2> <li><b>Title:</b> {booksTitle} </li>
           <ul>
               <li className='author'>Author: { booksData } </li>
           </ul>

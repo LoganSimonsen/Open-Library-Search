@@ -51,7 +51,7 @@ class Data extends React.Component {
 		return(
             <div id='resultsBox'>
             <ul><h2>Example Results</h2>
-            <li><b>Title:</b> {booksTitle} <button onClick={this.handleClick} >Add\></button></li>
+            <li><b>Title:</b> {booksTitle} </li>
                 <ul>
                     <li className='author'>Author: { booksData } </li>
                 </ul>
