@@ -170,9 +170,9 @@ getRandomColor() {
             
             </div>
             
-        <Post />
+
         <Form />
-        <Delete />
+
         
       </div>
     );
