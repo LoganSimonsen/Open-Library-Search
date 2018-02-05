@@ -1,0 +1,83 @@
+boby {
+  color:black;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  display: inline-block;
+}
+
+.App {
+  
+}
+
+img {
+  text-align: left;
+}
+
+.App-header {
+  background-color: rgb(68, 68, 68);
+  height: 50px;
+  padding: 20px;
+  color: white;
+}
+
+.App-title {
+  font-size: 1.5em;
+}
+
+.App-intro {
+  font-size: large;
+}
+
+@keyframes App-logo-spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+#resultsBox {
+  margin: 5px;
+  margin-top: 15px;
+  
+  right: 5px;
+  top: 5px;
+  background: seashell;
+  text-align: left;
+  width: 45vw;
+  padding: 10px;
+  border: solid;
+  min-width: 300px;
+  z-index: 1;
+}
+#favsresultsBox {
+  background: skyblue;
+  text-align: left;
+  padding: 2px;
+  border: solid;
+  border-radius: 25px;
+}
+
+
+h2 {
+  text-align: left;
+}
+li {
+  padding: 10px;
+}
+.author {
+  padding: 2px;
+}
+form {
+  padding: 5px;
+}
+input {
+  margin: 2px;
+}
+#newSearch {
+  margin: 5px;
+  display: flex;
+  background: seashell;
+  text-align: left;
+  flex-direction: column;
+  width: 45vw;
+  padding: 10px;
+  border: solid;
+  min-width: 300px;
+  min-height: 400px;
+}
