@@ -1,10 +1,6 @@
 import React from 'react';
 // import axios from 'axios';
-import '../App.css';
-import Data from './Data';
-import Form from './Form';
 
-const axios = require("axios");
 class Favs extends React.Component {
   constructor(props) {
     super(props);

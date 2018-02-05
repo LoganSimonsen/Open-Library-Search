@@ -10,11 +10,11 @@ app.use(bodyParser.json());
 app.use(cors());
 
 const { getChars1 } = require(`${__dirname}/controllers/mainCtrl`);
-
+const { arrayDelete } = require(`${__dirname}/controllers/mainCtrl`);
 
 app.get("/api/test1", getChars1);
 app.post("/api/test1", getChars1)
-
+app.delete("/api/delete/:id", arrayDelete)
 
 
 app.listen(port, () => {

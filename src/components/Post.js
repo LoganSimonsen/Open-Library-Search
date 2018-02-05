@@ -23,8 +23,8 @@ class Post extends React.Component {
 	render(){
         const { booksData } = this.state;
 		return(
-            <div id='resultsBox'>
-            <h2>Post Response from Config</h2>
+            <div id='postBox'>
+            <h4>Post Response from Config</h4>
             { booksData }
             
             

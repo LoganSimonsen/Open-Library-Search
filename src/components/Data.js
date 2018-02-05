@@ -1,7 +1,6 @@
 import React from 'react';
 import axios from 'axios';
-import Favs from './Favs';
-// import NewComponent from './NewComponent';
+
 
 let responseArr = [];
 let $addToFavs = '';
@@ -50,7 +49,7 @@ class Data extends React.Component {
         const { handleClick, responseArr, booksTitleList, $addToFavs, booksData, booksData1, booksData2, booksData3, booksData4, booksData5, booksTitle, booksTitle1, booksTitle2, booksTitle3,  booksTitle4,  booksTitle5 } = this.state;
 		return(
             <div id='resultsBox'>
-            <ul><h2>Example Results</h2>
+            <ul><h4>Example Results</h4>
             <li><b>Title:</b> {booksTitle} </li>
                 <ul>
                     <li className='author'>Author: { booksData } </li>

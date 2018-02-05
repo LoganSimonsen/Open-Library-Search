@@ -5,13 +5,16 @@ class Delete extends React.Component {
     constructor(props) {
       super(props);
       this.state = {
+        deleteData: '',
       }
       
       
     } 
     componentDidMount() {
-        axios.delete('http://localhost:3001/api/test1'[0]).then(response => {
-            console.log(response);
+        axios.delete('http://localhost:3001/api/delete/data').then(response => {
+            console.log(response.data[0]);
+            this.setState({deleteData: response.data[0]});
+            
             
            
         });
@@ -19,10 +22,11 @@ class Delete extends React.Component {
      
 
 	render(){
+    const { deleteData } = this.state;
 		return(
             <div id='resultsBox'>
-            <h2>Delete</h2>
-            
+            <h4>Delete Response</h4>
+              undefined
             
             </div>
             

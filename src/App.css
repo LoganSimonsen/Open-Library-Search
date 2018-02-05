@@ -7,16 +7,17 @@ boby {
 }
 
 .App {
-  
 }
 
 img {
   text-align: left;
+  zoom: 1.5;
+  padding-top: 20px;
 }
 
 .App-header {
   background-color: rgb(68, 68, 68);
-  height: 50px;
+  height: 200px;
   padding: 20px;
   color: white;
 }
@@ -40,11 +41,56 @@ img {
   top: 5px;
   background: seashell;
   text-align: left;
-  width: 42vw;
+  width: 48vw;
   padding: 10px;
   border: solid;
   min-width: 300px;
-  z-index: 1;
+  z-index: 100;
+  border-radius: 15px;
+  box-shadow:  8px 8px 4px 4px;
+}
+#resultsBox:hover {
+  box-shadow: 0px 0px 0px 0px;
+}
+#cartBox {
+  float: right;
+  
+  margin: 5px;
+  margin-top: 15px;
+  right: 5px;
+  top: 5px;
+  background: seashell;
+  text-align: left;
+  width: 48vw;
+  padding: 10px;
+  border: solid;
+  min-width: 300px;
+  z-index: 100;
+  border-radius: 15px;
+  box-shadow:  8px 8px 4px 4px;
+}
+#cartBox:hover {
+  box-shadow: 0px 0px 0px 0px;
+}
+#postBox {
+  float: right;
+ 
+  margin: 5px;
+  margin-top: 78px;
+  right: 5px;
+  top: 5px;
+  background: seashell;
+  text-align: left;
+  width: 48vw;
+  padding: 10px;
+  border: solid;
+  min-width: 300px;
+  z-index: 100;
+  border-radius: 15px;
+  box-shadow:  8px 8px 4px 4px;
+}
+#postBox:hover {
+  box-shadow: 0px 0px 0px 0px;
 }
 #favsresultsBox {
   background: skyblue;
@@ -64,11 +110,13 @@ li {
 .author {
   padding: 2px;
 }
-form {
+input {
+  margin-top: 15px;
+  margin-left: 5px;
   padding: 5px;
 }
-input {
-  margin: 2px;
+#lable{
+  margin-left:5px;
 }
 #newSearch {
   margin: 2px;
@@ -77,8 +125,41 @@ input {
   text-align: left;
   flex-direction: column;
   width: 45vw;
-  padding: 4px;
+  /* padding: 4px; */
   border: solid;
   min-width: 300px;
   min-height: 400px;
+}
+
+#imgCart {
+  float: right;
+  zoom: .2;
+  margin-right: 100px;
+}
+
+.btn {
+  float: right;
+}
+#randomButton {
+  position: fixed;
+  top: 500px;
+  right: 5px;
+  margin: 50px;
+  padding: 10px;
+  z-index: 1;
+}
+#netscape {
+  zoom: .03;
+  float: right;
+
+}
+#netscapeText {
+  zoom: .75;
+  float: right;
+
+}
+#title {
+  float: right;
+  direction: rtl;
+  padding-top: 50px;
 }

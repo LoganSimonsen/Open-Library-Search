@@ -45,36 +45,41 @@ class Form extends React.Component {
         const { handleClick, responseArr, booksTitleList, $addToFavs, booksData, booksData1, booksData2, booksData3, booksData4, booksData5, booksTitle, booksTitle1, booksTitle2, booksTitle3,  booksTitle4,  booksTitle5 } = this.state;
       return (
         <form onSubmit={this.handleSubmit}>
-          <label>
+          <label id='lable'>
             Search Book Titles:
             <input type="text"  value={this.state.value} onChange={this.changeValue} placeholder='The way of...' />
           </label>
-          <input type="submit" value="Submit" />
+          <input type="submit" value="Submit"/>
 
-          <div id='resultsBox'> <h2>Custom Search</h2> <li><b>Title:</b> {booksTitle} </li>
+          <div id='resultsBox'> <h4>Custom Search</h4> 
+          
+          <li><b>Title:</b> {booksTitle} </li> 
           <ul>
               <li className='author'>Author: { booksData } </li>
           </ul>
-  <li><b>Title:</b> {booksTitle1}</li>
-       <ul>
-          <li className='author'>Author: { booksData1 }</li>
-      </ul>
-  <li><b>Title:</b> {booksTitle2}</li>
-       <ul>
-           <li className='author'>Author: { booksData2 }</li>
-      </ul>
-  <li><b>Title:</b> {booksTitle3}</li>
-      <ul>
-          <li className='author'> Author:{ booksData3 }</li>
-      </ul>
-  <li><b>Title:</b> {booksTitle4}</li>
-       <ul>
-          <li className='author'>Author: { booksData4 }</li>
-      </ul>
-  <li><b>Title:</b> {booksTitle5}</li>
-      <ul>
-          <li className='author'>Author: { booksData5 }</li>
-      </ul>
+          
+      <li><b>Title:</b> {booksTitle1} </li>
+           <ul>
+              <li className='author'>Author: { booksData1 }</li>
+          </ul>
+      <li><b>Title:</b> {booksTitle2} </li>
+           <ul>
+               <li className='author'>Author: { booksData2 }</li>
+          </ul>
+      <li><b>Title:</b> {booksTitle3} </li>
+          <ul>
+              <li className='author'> Author:{ booksData3 }</li>
+          </ul>
+      <li><b>Title:</b> {booksTitle4} </li>
+           <ul>
+              <li className='author'>Author: { booksData4 }</li>
+          </ul>
+      <li><b>Title:</b> {booksTitle5} </li>
+          <ul>
+              <li className='author'>Author: { booksData5 }</li>
+          </ul>
+      
+
   </div>
         </form>
         
