@@ -82,37 +82,42 @@ getDetails(){
 }
     getDetails1(){
         axios.get('http://openlibrary.org/search.json?title=' + this.state.booksTitle1).then(response => {
-        swal('First Publish Year: '+ response.data.docs[0]['first_publish_year'], {
-                buttons: [true],
-            });
+            swal('First Publish Year: '+ response.data.docs[0]['first_publish_year']
+            +"\n"+ 'Edition Count: '+ response.data.docs[0]['edition_count'],  {
+                    buttons: [true],
+                  });
     });
     }
         getDetails2(){
             axios.get('http://openlibrary.org/search.json?title=' + this.state.booksTitle2).then(response => {
-            swal('First Publish Year: '+ response.data.docs[0]['first_publish_year'], {
-                    buttons: [true],
-                });
+                swal('First Publish Year: '+ response.data.docs[0]['first_publish_year']
+                +"\n"+ 'Edition Count: '+ response.data.docs[0]['edition_count'],  {
+                        buttons: [true],
+                      });
         });
         }
             getDetails3(){
                 axios.get('http://openlibrary.org/search.json?title=' + this.state.booksTitle3).then(response => {
-                swal('First Publish Year: '+ response.data.docs[0]['first_publish_year'], {
-                        buttons: [true],
-                    });
+                    swal('First Publish Year: '+ response.data.docs[0]['first_publish_year']
+                    +"\n"+ 'Edition Count: '+ response.data.docs[0]['edition_count'],  {
+                            buttons: [true],
+                          });
             });
             }
                 getDetails4(){
                     axios.get('http://openlibrary.org/search.json?title=' + this.state.booksTitle4).then(response => {  
-                    swal('First Publish Year: '+ response.data.docs[0]['first_publish_year'], {
-                            buttons: [true],
-                        });
+                        swal('First Publish Year: '+ response.data.docs[0]['first_publish_year']
+                        +"\n"+ 'Edition Count: '+ response.data.docs[0]['edition_count'],  {
+                                buttons: [true],
+                              });
                 });
                 }
                     getDetails5(){
                         axios.get('http://openlibrary.org/search.json?title=' + this.state.booksTitle5).then(response => { 
-                        swal('First Publish Year: '+ response.data.docs[0]['first_publish_year'], {
-                                buttons: [true],
-                            });
+                            swal('First Publish Year: '+ response.data.docs[0]['first_publish_year']
+                            +"\n"+ 'Edition Count: '+ response.data.docs[0]['edition_count'],  {
+                                    buttons: [true],
+                                  });
                     });
                     }
 
