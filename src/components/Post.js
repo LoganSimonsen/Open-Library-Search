@@ -1,31 +1,40 @@
 import React from 'react';
 import axios from 'axios';
-import Favs from './Favs';
-import App from '../App';
 
+let clickToggle = 0;
 class Post extends React.Component {
     constructor(props) {
       super(props);
       this.state = {
+        firstName: 'Logan',
+        lastName: 'Simonsen',
+        appAuthor: ''
       }
-      
+      this.title = this.title.bind(this);
       
     } 
-    componentDidMount() {
-        axios.post('http://localhost:3001/api/test1',['testTestTest',['data'][0]]).then(response => {
-            console.log(response);
-            this.setState({ booksData: response.config['data']})
-           
-        });
+    title(event){
+        const { firstName, lastName} = this.state;
+        clickToggle += 1;
+        if(clickToggle % 2 !== 0){
+        axios.post('http://localhost:3001/api/post', {firstName, lastName}).then(response => {
+            this.setState({appAuthor: response.data[0]['firstName']+ ' ' + response.data[0]['lastName']})
+            
+            
+        }); 
+    }else{
+        this.setState({appAuthor: ''})
     }
+    }
+   
      
 
 	render(){
-        const { booksData } = this.state;
+        const { appAuthor, title } = this.state;
 		return(
-            <div id='postBox'>
-            <h4>Post Response from Config</h4>
-            { booksData }
+            <div>
+            <button onClick={this.title} id='revealAuthor' className='btn btn-secondary btn-sm '>Click for Author</button>
+            <div>{appAuthor}</div>
             
             
             </div>
