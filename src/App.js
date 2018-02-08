@@ -72,8 +72,6 @@ class App extends Component {
 }
 getDetails(){
     axios.get('http://openlibrary.org/search.json?title=' + this.state.booksTitle).then(response => {
-        
-    console.log(response.data.docs[0])    
     swal('First Publish Year: '+ response.data.docs[0]['first_publish_year']
     +"\n"+ 'Edition Count: '+ response.data.docs[0]['edition_count'],  {
             buttons: [true],
@@ -113,7 +111,7 @@ getDetails(){
                 });
                 }
                     getDetails5(){
-                        axios.get('http://openlibrary.org/search.json?title=' + this.state.booksTitle5).then(response => { 
+                        axios.get('http://openlibrary.org/search.json?title=' + this.state.booksTitle5).then(response => {
                             swal('First Publish Year: '+ response.data.docs[0]['first_publish_year']
                             +"\n"+ 'Edition Count: '+ response.data.docs[0]['edition_count'],  {
                                     buttons: [true],

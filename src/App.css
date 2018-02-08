@@ -41,7 +41,7 @@ img {
   top: 5px;
   background: seashell;
   text-align: left;
-  width: 48vw;
+  width: 55vw;
   padding: 10px;
   border: solid;
   min-width: 300px;
@@ -61,7 +61,7 @@ img {
   top: 5px;
   background: seashell;
   text-align: left;
-  width: 48vw;
+  width: 40vw;
   padding: 10px;
   border: solid;
   min-width: 300px;
@@ -169,4 +169,12 @@ input {
 #revealAuthor{
   margin-right: 80px;
   margin-bottom: 5px;
+}
+.swal-text {
+  font-size: 25px;
+  
+}
+.swal-modal {
+  border: 3px solid;
+  box-shadow: 25px 25px 5px 5px;
 }

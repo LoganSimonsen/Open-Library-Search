@@ -33,7 +33,7 @@ class Post extends React.Component {
         const { appAuthor, title } = this.state;
 		return(
             <div>
-            <button onClick={this.title} id='revealAuthor' className='btn btn-secondary btn-sm '>Click for Author</button>
+            <button onClick={this.title} id='revealAuthor' className='btn btn-secondary btn-sm '>Developer</button>
             <div>{appAuthor}</div>
             
             
