@@ -2,5 +2,87 @@ body {
   margin: 0;
   padding: 0;
   font-family: sans-serif;
+  background: #222;
+}
+th,
+tr,
+td {
+  border: solid thin;
+  max-width: 500px;
+  display: flex;
+  flex-direction: row-reverse;
+}
+.firstSentence {
+  flex-flow: row-reverse;
+
+  text-align: right;
+}
+.swal-modal {
+  width: 80vw;
+  text-align: center;
+}
+.swal-text {
+  font-size: 16px !important;
+}
+.swal-button {
+}
+th {
+  background: black;
+  color: white;
+  text-align: center;
+}
+.bookImage {
+  /* display: block; */
+  max-height: 280px;
+  max-width: 215px;
 }
 
+.resultsWrapper {
+  border: solid thin rgb(124, 124, 255);
+  width: 300px;
+  margin: 5px;
+  padding: 15px;
+  background: white;
+  text-align: center;
+}
+.resultsDisplay {
+  display: inline-flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.navLogo {
+  zoom: 0.7;
+}
+.button {
+  margin: 10px;
+  padding: 5px;
+  border: transparent;
+  background: turquoise;
+  color: white;
+}
+.container-fluid {
+  margin: 0 auto;
+  text-align: center;
+}
+.navbar-header {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+}
+.container-fluid {
+  line-height: 3;
+  text-emphasis: bold;
+}
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+@media screen and (max-height: 450px) {
+  li {
+    zoom: 0.8;
+  }
+  .navLogo {
+    zoom: 0.3;
+  }
+}

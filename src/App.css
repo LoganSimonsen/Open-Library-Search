@@ -1,4 +1,4 @@
-boby {
+/* boby {
   color:black;
   font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
   display: inline-flex -webkit-inline-flex;
@@ -128,7 +128,7 @@ input {
   text-align: left;
   flex-direction: column;
   width: 45vw;
-  /* padding: 4px; */
+padding: 4px; 
   border: solid;
   min-width: 300px;
   min-height: 400px;
@@ -177,4 +177,4 @@ input {
 .swal-modal {
   border: 3px solid;
   box-shadow: 25px 25px 5px 5px;
-}
+} */

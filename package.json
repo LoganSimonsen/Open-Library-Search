@@ -5,11 +5,17 @@
   "dependencies": {
     "axios": "^0.17.1",
     "body-parser": "^1.18.2",
+    "bootstrap": "^4.0.0",
     "cors": "^2.8.4",
     "express": "^4.16.2",
+    "prop-types": "^15.6.1",
     "react": "^16.2.0",
+    "react-bootstrap": "^0.32.1",
     "react-dom": "^16.2.0",
-    "react-scripts": "1.1.0"
+    "react-router": "^4.2.0",
+    "react-scripts": "1.1.0",
+    "react-skylight": "^0.5.0",
+    "sweetalert": "^2.1.0"
   },
   "scripts": {
     "start": "react-scripts start",

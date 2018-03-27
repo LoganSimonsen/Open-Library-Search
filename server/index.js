@@ -9,14 +9,13 @@ const app = express();
 app.use(bodyParser.json());
 app.use(cors());
 
-const { getChars1 } = require(`${__dirname}/controllers/mainCtrl`);
+const { getSubject } = require(`${__dirname}/controllers/mainCtrl`);
 const { arrayDelete } = require(`${__dirname}/controllers/mainCtrl`);
 const { postMan } = require(`${__dirname}/controllers/mainCtrl`);
 
-app.get("/api/test1", getChars1);
+app.post("/api/Subject", getSubject);
 app.post("/api/post", postMan);
-app.delete("/api/delete/:id", arrayDelete)
-
+app.delete("/api/delete/:id", arrayDelete);
 
 app.listen(port, () => {
   console.log(`Listening on port: ${port}`);
