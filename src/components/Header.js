@@ -5,7 +5,7 @@ class Header extends Component {
     return (
       <nav class="navbar navbar-default">
         <div class="container-fluid">
-          Welcome to Open Library Search!
+          <span className="welcomeBanner">Welcome to Open Library Search!</span>
           <br />
           <a
             style={{ zoom: "0.8" }}
