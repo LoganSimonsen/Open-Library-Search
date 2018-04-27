@@ -91,7 +91,7 @@ class Love extends Component {
               placeholder="Search by Subject..."
             />
           </label>
-          <input className="button" type="submit" value="Search" />
+          <input className="button submit" type="submit" value="Search" />
         </form>
         <div className="resultsDisplay">{tempData}</div>
       </div>

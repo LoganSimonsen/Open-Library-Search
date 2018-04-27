@@ -74,6 +74,12 @@ th {
   border: transparent;
   background: turquoise;
   border-radius: 5px;
+  color: white;
+}
+.submit:hover {
+  background-color: transparent;
+  color: black;
+  background-color: white;
 }
 .container-fluid {
   margin: 0 auto;
