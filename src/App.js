@@ -30,7 +30,7 @@ class App extends Component {
   handleSubmit(event, res, req, nexts) {
     event.preventDefault();
     axios
-      .get("http://openlibrary.org/search.json?title=" + this.state.value)
+      .get("https://openlibrary.org/search.json?title=" + this.state.value)
       .then(response => {
         console.log(response.data.docs);
         this.setState({ data: response.data.docs });
@@ -64,7 +64,7 @@ class App extends Component {
       } else {
         isbnTemp = 2222;
       }
-      let image = "http://covers.openlibrary.org/b/isbn/" + isbnTemp + "-M.jpg";
+      let image = "https://covers.openlibrary.org/b/isbn/" + isbnTemp + "-M.jpg";
       return (
         <div className="resultsWrapper">
           <h3 className="bookTitle">{data.title} </h3>
@@ -91,7 +91,7 @@ class App extends Component {
             {data.ia && (
               <a href={"https://archive.org/stream/" + data.ia[0]}>
                 {data.ia !== undefined && (
-                  <button className="button">READ</button>
+                  <button className="button">Read</button>
                 )}
               </a>
             )}
@@ -102,7 +102,7 @@ class App extends Component {
     return (
       <div className="App">
         <Header />
-        {window.location.href === "http://localhost:3000/#/" && (
+        {window.location.href !== "https://openlibrarysearch.now.sh/#/subjects" && (
           <div>
             <form onSubmit={this.handleSubmit}>
               <label id="lable">

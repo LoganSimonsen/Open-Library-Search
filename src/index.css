@@ -12,6 +12,21 @@ td {
   display: flex;
   flex-direction: row-reverse;
 }
+button {
+  border-radius: 5px;
+  margin: 10px;
+  padding: 5px;
+  border: transparent;
+  box-shadow: transparent;
+  color: white;
+  background-color: gray;
+  min-width: 55px;
+}
+button:hover {
+  background-color: transparent;
+  border: solid black thin;
+  color: black;
+}
 .firstSentence {
   flex-flow: row-reverse;
 
