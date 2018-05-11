@@ -27,7 +27,6 @@ class Author extends Component {
     axios
       .post("/api/author", { temp123 })
       .then(response => {
-        console.log("author", response.data.docs);
         this.setState({ works: response.data.docs });
         this.setState({ subject: "" });
       })

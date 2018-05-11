@@ -3,8 +3,6 @@ let creatorName = [];
 const axios = require("axios");
 
 const getSubject = (req, res, next) => {
-  console.log("params", req.params);
-  console.log("body", req.body);
   axios
     .get(
       "http://openlibrary.org/subjects/" +
@@ -18,8 +16,6 @@ const getSubject = (req, res, next) => {
 };
 
 const getAuthor = (req, res, next) => {
-  console.log("params", req.params);
-  console.log("body", req.body);
   axios
     .get("http://openlibrary.org/search.json?author=" + req.body.temp123)
     .then(response => {

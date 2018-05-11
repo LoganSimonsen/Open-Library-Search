@@ -32,7 +32,6 @@ class App extends Component {
     axios
       .get("https://openlibrary.org/search.json?title=" + this.state.value)
       .then(response => {
-        console.log(response.data.docs);
         this.setState({ data: response.data.docs });
       })
       .catch(console.log);

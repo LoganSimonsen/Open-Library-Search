@@ -73,9 +73,11 @@ class Subject extends Component {
             />
           )}
           <br />
-          <a href={"https://archive.org/stream/" + data.ia}>
-            <button className="button">READ</button>
-          </a>
+          {data.ia && (
+            <a href={`https://archive.org/stream/${data.ia}`}>
+              <button className="button">READ</button>
+            </a>
+          )}
         </div>
       );
     });
