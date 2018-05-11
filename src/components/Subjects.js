@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import axios from "axios";
 import "../index.css";
 import { error } from "util";
-import Love from "./subjects/Love";
+import Subject from "./subjects/Subject";
 
 class Subjects extends Component {
   constructor(props) {
@@ -24,7 +24,7 @@ class Subjects extends Component {
   render() {
     return (
       <div className="App">
-        <Love />
+        <Subject />
       </div>
     );
   }

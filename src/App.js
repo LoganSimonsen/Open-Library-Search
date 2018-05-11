@@ -64,7 +64,8 @@ class App extends Component {
       } else {
         isbnTemp = 2222;
       }
-      let image = "https://covers.openlibrary.org/b/isbn/" + isbnTemp + "-M.jpg";
+      let image =
+        "https://covers.openlibrary.org/b/isbn/" + isbnTemp + "-M.jpg";
       return (
         <div className="resultsWrapper">
           <h3 className="bookTitle">{data.title} </h3>
@@ -102,24 +103,27 @@ class App extends Component {
     return (
       <div className="App">
         <Header />
-        {window.location.href !== "https://openlibrarysearch.now.sh/#/subjects" && (
-          <div>
-            <form onSubmit={this.handleSubmit}>
-              <label id="lable">
-                <input
-                  id="inputBox"
-                  type="text"
-                  value={this.state.value}
-                  onChange={this.changeValue}
-                  placeholder="Search by Title..."
-                />
-              </label>
-              <input className="button submit" type="submit" value="Search" />
-            </form>
+        {window.location.href !==
+          "https://openlibrarysearch.now.sh/#/subjects" &&
+          window.location.href !==
+            "https://openlibrarysearch.now.sh/#/author" && (
+            <div>
+              <form onSubmit={this.handleSubmit}>
+                <label id="lable">
+                  <input
+                    id="inputBox"
+                    type="text"
+                    value={this.state.value}
+                    onChange={this.changeValue}
+                    placeholder="Search by Title..."
+                  />
+                </label>
+                <input className="button submit" type="submit" value="Search" />
+              </form>
 
-            <div className="resultsDisplay">{results}</div>
-          </div>
-        )}
+              <div className="resultsDisplay">{results}</div>
+            </div>
+          )}
         {routes}
       </div>
     );

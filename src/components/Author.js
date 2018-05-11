@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import axios from "axios";
 
-class Love extends Component {
+class Author extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -25,9 +25,10 @@ class Love extends Component {
   getResults() {
     let temp123 = this.state.subject;
     axios
-      .post("/api/subject", { temp123 })
+      .post("/api/author", { temp123 })
       .then(response => {
-        this.setState({ works: response.data.works });
+        console.log("author", response.data.docs);
+        this.setState({ works: response.data.docs });
         this.setState({ subject: "" });
       })
       .catch(console.log);
@@ -44,8 +45,8 @@ class Love extends Component {
   render() {
     let tempData = this.state.works.map((data, i) => {
       let coverIDTemp = 2222;
-      if (data.cover_id) {
-        coverIDTemp = data.cover_id;
+      if (data.cover_i) {
+        coverIDTemp = data.cover_i;
       } else {
         coverIDTemp = 2222;
       }
@@ -54,9 +55,9 @@ class Love extends Component {
       return (
         <div className="resultsWrapper">
           <h3 className="bookTitle">{data.title}</h3>
-          {data.authors[0] && (
+          {data.author_name[0] && (
             <h5 style={{ backgroundColor: "white" }}>
-              Author: {data.authors[0].name}
+              Author: {data.author_name[0]}
             </h5>
           )}
           {coverIDTemp !== 2222 && (
@@ -73,9 +74,11 @@ class Love extends Component {
             />
           )}
           <br />
-          <a href={"https://archive.org/stream/" + data.ia}>
-            <button className="button">READ</button>
-          </a>
+          {data.ia && (
+            <a href={"https://archive.org/stream/" + data.ia[0]}>
+              <button className="button">READ</button>
+            </a>
+          )}
         </div>
       );
     });
@@ -88,7 +91,7 @@ class Love extends Component {
               type="text"
               value={this.state.value}
               onChange={this.changeValue}
-              placeholder="Search by Subject..."
+              placeholder="Search by Author..."
             />
           </label>
           <input className="button submit" type="submit" value="Search" />
@@ -99,4 +102,4 @@ class Love extends Component {
   }
 }
 
-export default Love;
+export default Author;

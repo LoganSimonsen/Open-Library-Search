@@ -17,6 +17,17 @@ const getSubject = (req, res, next) => {
     .catch(console.log);
 };
 
+const getAuthor = (req, res, next) => {
+  console.log("params", req.params);
+  console.log("body", req.body);
+  axios
+    .get("http://openlibrary.org/search.json?author=" + req.body.temp123)
+    .then(response => {
+      res.json(response.data);
+    })
+    .catch(console.log);
+};
+
 const arrayDelete = (req, res, next) => {
   axios
     .get("http://openlibrary.org/search.json?title=how+to+code/data/data/0")
@@ -34,6 +45,7 @@ const postMan = (req, res) => {
 
 module.exports = {
   getSubject: getSubject,
+  getAuthor: getAuthor,
   arrayDelete: arrayDelete,
   postMan: (req, res) => {
     const { firstName, lastName } = req.body;

@@ -3,8 +3,8 @@ import React, { Component } from "react";
 class Header extends Component {
   render() {
     return (
-      <nav class="navbar navbar-default">
-        <div class="container-fluid">
+      <nav className="navbar navbar-default">
+        <div className="container-fluid">
           <span className="welcomeBanner">Welcome to Open Library Search!</span>
           <br />
           <a
@@ -13,36 +13,50 @@ class Header extends Component {
           >
             About Open Library
           </a>
-          <div class="navbar-header">
-            <a class="navbar-brand" href="https://openlibrary.org">
+          <div className="navbar-header">
+            <a className="navbar-brand" href="https://openlibrary.org">
               <img
                 className="navLogo"
                 src="https://openlibrary.org/static/images/openlibrary-logo.png"
               />
             </a>
           </div>
-          <ul class="nav navbar-nav">
+          <ul className="nav navbar-nav">
             <li>
               <a href="#">Search By: </a>
             </li>
-            {window.location.href === "http://localhost:3000/#/" && (
-              <li class="active">
+            {window.location.href === "https://openlibrarysearch.now.sh/#/" && (
+              <li className="active">
                 <a href="/#/">Titles</a>
               </li>
             )}
-            {window.location.href !== "http://localhost:3000/#/" && (
+            {window.location.href !== "https://openlibrarysearch.now.sh/#/" && (
               <li>
                 <a href="/#/">Titles</a>
               </li>
             )}
-            {window.location.href === "http://localhost:3000/#/subjects" && (
-              <li class="active">
+            {window.location.href ===
+              "https://openlibrarysearch.now.sh/#/subjects" && (
+              <li className="active">
                 <a href="/#/subjects">Subjects</a>
               </li>
             )}
-            {window.location.href !== "http://localhost:3000/#/subjects" && (
+            {window.location.href !==
+              "https://openlibrarysearch.now.sh/#/subjects" && (
               <li>
                 <a href="/#/subjects">Subjects</a>
+              </li>
+            )}
+            {window.location.href ===
+              "https://openlibrarysearch.now.sh/#/author" && (
+              <li className="active">
+                <a href="/#/author">Author</a>
+              </li>
+            )}
+            {window.location.href !==
+              "https://openlibrarysearch.now.sh/#/author" && (
+              <li>
+                <a href="/#/author">Author</a>
               </li>
             )}
           </ul>
