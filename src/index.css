@@ -1,7 +1,7 @@
 body {
   margin: 0;
   padding: 0;
-  font-family: sans-serif;
+  font-family: "Titillium Web", sans-serif;
   background: #222;
 }
 th,
@@ -12,6 +12,12 @@ td {
   display: flex;
   flex-direction: row-reverse;
 }
+.spinWrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  zoom: 3;
+}
 button {
   border-radius: 5px;
   margin: 10px;
@@ -21,6 +27,7 @@ button {
   color: white;
   background-color: gray;
   min-width: 55px;
+  font-weight: 1000 !important;
 }
 button:hover {
   background-color: transparent;
@@ -72,7 +79,7 @@ th {
   margin: 10px;
   padding: 5px;
   border: transparent;
-  background: turquoise;
+  background: lightskyblue;
   border-radius: 5px;
   color: white;
 }
@@ -96,8 +103,14 @@ th {
 }
 form {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   align-items: center;
+  justify-content: center;
+}
+#inputBox {
+  width: 400px;
+  text-align: center;
+  border-radius: 15px;
 }
 @media screen and (max-width: 480px) {
   li {

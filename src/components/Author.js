@@ -88,7 +88,6 @@ class Author extends Component {
             <input
               id="inputBox"
               type="text"
-              value={this.state.value}
               onChange={this.changeValue}
               placeholder="Search by Author..."
             />

@@ -1,12 +1,10 @@
 import React, { Component } from "react";
-import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 import Header from "./components/Header";
 import axios from "axios";
 import "./App.css";
-import { error } from "util";
 import swal from "sweetalert";
-import SkyLight from "react-skylight";
 import routes from "./routes";
+import Spinner from "react-spinkit";
 
 class App extends Component {
   constructor(props) {
@@ -16,7 +14,8 @@ class App extends Component {
       clicked: 0,
       data: [],
       toggled: false,
-      readLink: ""
+      readLink: "",
+      isLoading: false
     };
     this.handleSubmit = this.handleSubmit.bind(this);
     this.changeValue = this.changeValue.bind(this);
@@ -29,16 +28,18 @@ class App extends Component {
   }
   handleSubmit(event, res, req, nexts) {
     event.preventDefault();
+    this.setState({ isLoading: true });
+    this.setState({ data: "" });
     axios
       .get("https://openlibrary.org/search.json?title=" + this.state.value)
       .then(response => {
         this.setState({ data: response.data.docs });
+        this.setState({ isLoading: false });
       })
       .catch(console.log);
   }
   clickToggle(data) {
-    console.dir(data);
-    swal(JSON.stringify(data, null, 4));
+    swal(JSON.stringify(data, null, 1));
     if (this.state.toggle) {
       this.setState({ toggle: false });
     } else {
@@ -54,7 +55,7 @@ class App extends Component {
       marginTop: "-300px",
       marginLeft: "-35%"
     };
-    let temp = this.state.data;
+    let temp = this.state.data || [];
     let results = temp.map((data, i) => {
       let isbnTemp = 2222;
       let alertTitle = data.title;
@@ -89,7 +90,11 @@ class App extends Component {
             <button onClick={() => this.clickToggle(data)}>Details</button>
 
             {data.ia && (
-              <a href={"https://archive.org/stream/" + data.ia[0]}>
+              <a
+                href={"https://archive.org/stream/" + data.ia[0]}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 {data.ia !== undefined && (
                   <button className="button">Read</button>
                 )}
@@ -102,24 +107,29 @@ class App extends Component {
     return (
       <div className="App">
         <Header />
-        {window.location.href !==
-          "https://openlibrarysearch.now.sh/#/subjects" &&
-          window.location.href !==
-            "https://openlibrarysearch.now.sh/#/author" && (
-            <div>
+        {!window.location.href.includes("/#/subjects") &&
+          !window.location.href.includes("/#/author") && (
+            <div class="formWrapper">
               <form onSubmit={this.handleSubmit}>
                 <label id="lable">
                   <input
                     id="inputBox"
                     type="text"
-                    value={this.state.value}
                     onChange={this.changeValue}
                     placeholder="Search by Title..."
                   />
                 </label>
                 <input className="button submit" type="submit" value="Search" />
               </form>
-
+              {this.state.isLoading && (
+                <div class="spinWrapper">
+                  <Spinner
+                    name="line-scale-party"
+                    color="lightskyblue"
+                    zoom="500"
+                  />
+                </div>
+              )}
               <div className="resultsDisplay">{results}</div>
             </div>
           )}
